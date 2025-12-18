@@ -24,16 +24,13 @@ Visualizations were created using Power BI, with data shaping and modeling using
 - Interactive Power BI Dashboard
   - Slicers for time period, product category, and location
   - Dynamic visuals including bar charts, cards, and maps
-
 - Data Processing
   - Cleaned and transformed using Power Query
   - SQL scripts for extracting and aggregating key metrics
-
 - KPI Cards & Insights
   - Total Revenue
   - Total Shipment Count
   - Profit Percentage
-
 - Sales by Geography
   - Region-wise insights for better decision-making
 
@@ -107,12 +104,10 @@ Inside the /sql folder you’ll find scripts to:
 **Samruddhi Savale**
 Aspiring Data Analyst | SQL | Python | Power BI | Excel | Data Visualization | Data Cleaning
 
-## GitHub: 
+GitHub: 
 https://github.com/Samruddhi-Savale/Awesome_Chocolates-Dashboard.git
-## LinkedIn:  
+LinkedIn:  
 https://www.linkedin.com/in/samruddhi-savale-7119a4284/
-
----
 
 ## License
 
