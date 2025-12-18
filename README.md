@@ -55,13 +55,16 @@ Visualizations were created using Power BI, with data shaping and modeling using
 
 ## Project Structure
 
+```
 Awesome_Chocolates-Dashboard/
-├── assets/                # Images, documentation diagrams
-├── data/                  # Raw & processed datasets (CSV/Excel)
-├── dashboard/             # PBIX Power BI file(s)
-├── sql/                   # SQL scripts for data preparation
-├── README.md              # This file
+│
+├── assets/        # Dashboard screenshots & visuals
+├── data/          # Raw and processed datasets
+├── dashboard/     # Power BI (.pbix) file
+├── sql/           # SQL queries for data preparation
+├── README.md      # Project documentation
 └── LICENSE
+```
 
 ---
 
