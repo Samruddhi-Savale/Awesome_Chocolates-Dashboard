@@ -107,9 +107,9 @@ Inside the /sql folder you’ll find scripts to:
 **Samruddhi Savale**
 Aspiring Data Analyst | SQL | Python | Power BI | Excel | Data Visualization | Data Cleaning
 
-GitHub: 
+- **GitHub:** 
 https://github.com/Samruddhi-Savale/Awesome_Chocolates-Dashboard.git
-LinkedIn:  
+- **LinkedIn:** 
 https://www.linkedin.com/in/samruddhi-savale-7119a4284/
 
 ## License
