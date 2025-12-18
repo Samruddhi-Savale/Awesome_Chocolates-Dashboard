@@ -1,0 +1,85 @@
+-- SELECT EVERYTHING FROM SALES TABLE
+SELECT *
+FROM SALES;
+
+-- Show just a few columns from sales table
+-- 1.
+SELECT GeoID, Amount, Customers
+FROM SALES;
+
+-- 2.
+SELECT Amount, Customers, GeoID
+FROM SALES;
+
+-- Adding a calculated column with SQL
+SELECT SALEDATE, AMOUNT, BOXES, AMOUNT / BOXES
+FROM SALES;
+
+-- Naming a field with AS in SQL
+SELECT SALEDATE, AMOUNT, BOXES, AMOUNT / BOXES AS "AMOUNT PER BOX"
+FROM SALES;
+
+-- Using Where Clause in SQL
+SELECT *
+FROM SALES
+WHERE AMOUNT > 10000;
+
+-- Showing sales data where amount is greater than 10,000 by descending order
+SELECT *
+FROM SALES
+WHERE AMOUNT > 10000
+ORDER BY AMOUNT DESC;
+
+-- Showing sales data where geography is g1 by product ID &
+-- descending order of amounts
+SELECT *
+FROM SALES
+WHERE GeoID = 'G1'
+ORDER BY PID, AMOUNT DESC;
+
+-- Working with dates in SQL
+SELECT *
+FROM SALES
+WHERE AMOUNT > 10000 AND SALEDATE >= '2022-01-01';
+
+-- Using year() function to select all data in a specific year
+SELECT SALEDATE, AMOUNT
+FROM SALES
+WHERE AMOUNT > 10000 AND YEAR(SALEDATE) = 2022
+ORDER BY AMOUNT DESC;
+
+-- USING GROUP BY IN SQL
+-- 1.
+SELECT CATEGORY,COUNT(CATEGORY) 'NO. OF CATEGORY'
+FROM PRODUCTS
+GROUP BY CATEGORY;
+
+-- 2.
+SELECT TEAM,COUNT(*) 'NO. OF TEAM'
+FROM PEOPLE
+GROUP BY TEAM;
+
+-- USING DISTINCT
+SELECT DISTINCT(CATEGORY), PRODUCT
+FROM PRODUCTS;
+
+-- USING DISTINCT WITH COUNT
+SELECT COUNT(DISTINCT(CATEGORY))
+FROM PRODUCTS;
+
+-- BETWEEN condition in SQL with < & > operators
+-- 1.
+SELECT *
+FROM SALES
+WHERE BOXES > 0 AND BOXES <= 50;
+
+-- USING THE BETWEEN OPERATOR
+-- 2.
+SELECT *
+FROM SALES
+WHERE BOXES BETWEEN 0 AND 50;
+
+-- Using weekday() function in SQL
+SELECT CUSTOMERS, BOXES, AMOUNT, SALEDATE, weekday(SALEDATE) 'DAY OF WEEK'
+FROM SALES
+WHERE weekday(SALEDATE) = 4 ;

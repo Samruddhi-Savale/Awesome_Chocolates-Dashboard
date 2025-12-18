@@ -1,0 +1,72 @@
+-- Print details of shipments (sales) where amounts are > 2,000 and boxes are <100?
+SELECT *
+FROM SALES
+WHERE AMOUNT > 2000 AND BOXES < 100;
+
+-- How many shipments (sales) each of the sales persons had in the month of January 2022?
+SELECT P.SALESPERSON, COUNT(*) AS 'SHIPMENT COUNT'
+FROM SALES S
+JOIN PEOPLE P
+ON S.SPID = P.SPID
+WHERE S.SALEDATE BETWEEN '2022-01-01' AND '2022-01-31'
+GROUP BY P.SALESPERSON;
+
+-- Which product sells more boxes? Milk Bars or Eclairs?
+SELECT PR.PRODUCT, SUM(S.BOXES) 'TOTAL BOXES'
+FROM SALES S
+JOIN PRODUCTS PR
+ON S.PID = PR.PID
+WHERE PR.PRODUCT IN ('MILK BARS','ECLAIRS')
+GROUP BY PR.PRODUCT;
+
+-- Which product sold more boxes in the first 7 days of February 2022? Milk Bars or Eclairs?
+SELECT PR.PRODUCT, SUM(S.BOXES) 'TOTAL BOXES'
+FROM SALES S
+JOIN PRODUCTS PR
+ON S.PID = PR.PID
+WHERE S.SALEDATE BETWEEN '2022-02-01' AND '2022-02-07' AND PR.PRODUCT IN('MILK BARS', 'ECLAIRS')
+GROUP BY PR.PRODUCT;
+
+-- Which shipments had under 100 customers & under 100 boxes? Did any of them occur on Wednesday?
+SELECT *,
+    CASE   WHEN WEEKDAY(SALEDATE) = 2 THEN 'WEDNESDAY SHIPMENT'
+       ELSE ''
+	END AS 'W SHIPMENT'
+FROM SALES
+WHERE CUSTOMERS < 100 AND BOXES < 100;
+
+-- What are the names of salespersons who had at least one shipment (sale) in the first 7 days of January 2022?
+SELECT DISTINCT(P.SALESPERSON)
+FROM SALES S
+JOIN PEOPLE P
+ON S.SPID = P.SPID
+WHERE S.SALEDATE BETWEEN '2022-01-01' AND '2022-01-07';
+
+-- Which salespersons did not make any shipments in the first 7 days of January 2022?
+SELECT P.SALESPERSON
+FROM PEOPLE P
+WHERE P.SPID NOT IN (
+	  SELECT DISTINCT(S.SPID)
+      FROM SALES S
+      WHERE S.SALEDATE NOT BETWEEN '2022-01-01' AND '2022-01-07');
+      
+-- How many times we shipped more than 1,000 boxes in each month?
+SELECT YEAR(SALEDATE) 'YEAR', MONTH(SALEDATE) 'MONTH', COUNT(*) 'TIMES WE SHIPPED 1K BOXES'
+FROM SALES
+WHERE BOXES > 1000
+GROUP BY YEAR(SALEDATE), MONTH(SALEDATE)
+ORDER BY YEAR(SALEDATE), MONTH(SALEDATE);
+
+-- India or Australia? Who buys more chocolate boxes on a monthly basis?
+SELECT YEAR(SALEDATE) 'YEAR', MONTH(SALEDATE) 'MONTH',
+      SUM(CASE    WHEN G.GEO = 'INDIA' = 1 THEN BOXES
+               ELSE 0
+			END) 'INDIAN BOXES',
+	  SUM(CASE    WHEN G.GEO = 'AUSTRALIA' = 1 THEN BOXES
+			   ELSE 0
+			END) 'AUSTRALIAN BOXES'
+FROM SALES S
+JOIN GEO G
+ON S.GEOID = G.GEOID
+GROUP BY YEAR(S.SALEDATE), MONTH(S.SALEDATE)
+ORDER BY YEAR(S.SALEDATE), MONTH(S.SALEDATE);
