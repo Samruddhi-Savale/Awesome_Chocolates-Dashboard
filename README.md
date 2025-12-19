@@ -113,5 +113,4 @@ https://github.com/Samruddhi-Savale/Awesome_Chocolates-Dashboard.git
 https://www.linkedin.com/in/samruddhi-savale-7119a4284/
 
 ## License
-
-This project is licensed under the MIT License — free to use and adapt.
+This project is licensed under the MIT License 
