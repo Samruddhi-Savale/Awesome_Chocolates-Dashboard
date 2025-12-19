@@ -38,10 +38,10 @@ Visualizations were created using Power BI, with data shaping and modeling using
 
 ## Tools & Technologies
 
-- Power BI Desktop – Designed and developed an interactive sales performance dashboard
-- Power Query – Cleaned, transformed, and prepared raw sales data
-- Microsoft Excel – Source data handling and validation
-- SQL – Data aggregation and calculation of key business metrics
+- **Power BI Desktop –** Designed and developed an interactive sales performance dashboard
+- **Power Query –** Cleaned, transformed, and prepared raw sales data
+- **Microsoft Excel –** Source data handling and validation
+- **SQL –** Data aggregation and calculation of key business metrics
 
 ## Skills Demonstrated
 
