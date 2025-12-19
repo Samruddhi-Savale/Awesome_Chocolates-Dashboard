@@ -21,17 +21,17 @@ Visualizations were created using Power BI, with data shaping and modeling using
 
 ## Features
 
-- Interactive Power BI Dashboard
+- **Interactive Power BI Dashboard**
   - Slicers for time period, product category, and location
   - Dynamic visuals including bar charts, cards, and maps
-- Data Processing
+- **Data Processing**
   - Cleaned and transformed using Power Query
   - SQL scripts for extracting and aggregating key metrics
-- KPI Cards & Insights
+- **KPI Cards & Insights**
   - Total Revenue
   - Total Shipment Count
   - Profit Percentage
-- Sales by Geography
+- **Sales by Geography**
   - Region-wise insights for better decision-making
 
 ---
@@ -93,11 +93,11 @@ Inside the /sql folder you’ll find scripts to:
 - Launch Power BI Desktop
 - Load the .pbix file from the dashboard/ folder
 
-## Connect to Data:
+**Connect to Data:**
 - Load the datasets from the data/ directory
 - Ensure SQL scripts in sql/ are run against your local database (if applicable).
 
-## Explore & Customize:
+**Explore & Customize:**
 - Use slicers to filter views.
 - Modify visuals or add new KPIs.
   
