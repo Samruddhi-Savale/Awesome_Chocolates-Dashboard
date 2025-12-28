@@ -70,7 +70,6 @@ Awesome_Chocolates-Dashboard/
 
 ## Dashboard View
 
-Add screenshots or an embedded Power BI report here once available.
 <img width="1521" height="856" alt="Screenshot 2025-12-18 160421" src="https://github.com/user-attachments/assets/bf49e0ab-dd6d-4a1c-a557-f7877458855d" />
 
 ---
